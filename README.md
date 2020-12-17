@@ -1,4 +1,4 @@
-# Places You've Been - #33 of Basic Web Applications
+# Packer Tracker
 
 ### Created by: Eric Stratton, Garret Brown, Austin Schrader vs. 12/16/2020
 
@@ -12,7 +12,7 @@ _C# and .NET needs to be installed for this project to work. If you do not have 
 
 1. Download this repository by clicking the "Clone or Download" button
 2. Navigate to the folder where it downloaded
-3. Now open your terminal and navigate to PlacesBeen.Solution > PlacesBeen.Tests
+3. Now open your terminal and navigate to Packer-Tracker.Solution > Packer-Tracker.Tests
 4. Type in `dotnet restore` to download necessary packages
 5. Then type in `dotnet run` to run the application
 6. Navigate to localhost:5000

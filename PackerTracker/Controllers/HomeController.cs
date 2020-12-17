@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using PlacesBeen.Models;
+using PackerTracker.Models;
 using System.Collections.Generic;
 
-namespace PlacesBeen.Controllers
+namespace PackerTracker.Controllers
 {
   public class HomeController : Controller
   {

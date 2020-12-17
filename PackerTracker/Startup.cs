@@ -8,32 +8,37 @@ namespace PackerTracker
 {
     public class Startup
     {
-      public Startup(IHostingEnvironment env)
-      {
-        var builder = new ConfigurationBuilder()
-            .SetBasePath(env.ContentRootPath)
-            .AddEnvironmentVariables();
-        Configuration = builder.Build();
-      }
-
-      public IConfigurationRoot Configuration { get; }
-
-      public void ConfigureServices(IServiceCollection services)
-      {
-        services.AddMvc();
-      }
-
-      public void Configure(IApplicationBuilder app)
-      {
-        app.UseDeveloperExceptionPage();
-
-        app.UseMvc(routes =>
+        public Startup(IHostingEnvironment env)
         {
-          routes.MapRoute(
-            name: "default",
-            template: "{controller=Home"
-          )
-        })
-      }
+          var builder = new ConfigurationBuilder()
+              .SetBasePath(env.ContentRootPath)
+              .AddEnvironmentVariables();
+          Configuration = builder.Build();
+        }
+
+        public IConfigurationRoot Configuration { get; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+          services.AddMvc();
+        }
+
+        public void Configure(IApplicationBuilder app)
+        {
+          app.UseDeveloperExceptionPage();
+
+          app.UseMvc(routes =>
+          {
+            routes.MapRoute(
+              name: "default",
+              template: "{controller=Home}/{action=Index}/{id?}");
+          });
+
+          app.Run(async (context) => 
+          {
+            await context.Response.WriteAsync("Something went wrong!");
+          });
+          
+        }
     }
 }
